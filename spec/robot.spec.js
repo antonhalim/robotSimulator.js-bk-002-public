@@ -14,11 +14,9 @@ describe("Robot", function() {
   });
 
   it("invalid robot bearing", function() {
-    try {
+    expect(function() {
       robot.orient("crood");
-    } catch(exception) {
-      expect(exception).toEqual("Invalid Robot Bearing");
-    }
+    }).toThrow(new Error("Invalid Robot Bearing"));
   });
 
   it("turn right from north", function() {
